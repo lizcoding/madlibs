@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}Madlibs story{% endblock %}
+
+{% block content %}
+    <h1>Here is your Madlibs story</h1>
+
+    <h2>Hi, {{ name }}!</h2>
+    
+    {% if colors|length == 1 %}
+        {% set color_string = colors[0] %}
+    {% elif colors|length == 2 %}
+        {% set color_string = colors[0] + " and " + colors[1] %}
+    {% else %}
+        {% set color_string = colors[:-1]|join(', ') + ", and " + colors[-1] %}
+    {% endif %}
+
+    {% for type_of_story in story %}
+        {% if type_of_story == "adventure" %}
+            <p>{{type_of_story|capitalize}} story. There once was a {{ color_string }} {{ noun }} sitting in the Hackbright Lab.
+            When {{ name }} went to pick it up, it burst into flames in a totally
+            {{ adjective }} way.</p>
+        {% endif %}
+
+        {% if type_of_story == "romantic" %}
+        <p>{{type_of_story|capitalize}} story. There once was a {{ color_string }} {{ noun }} sitting in the Hackbright Lab.
+            When {{ name }} went to pick it up, it burst into flames in a totally
+            {{ adjective }} way.</p>
+        {% endif %}
+
+        {% if type_of_story == "mystery" %}
+        <p>{{type_of_story|capitalize}} story. There once was a {{ color_string }} {{ noun }} sitting in the Hackbright Lab.
+            When {{ name }} went to pick it up, it burst into flames in a totally
+            {{ adjective }} way.</p>
+        {% endif %}
+    {% endfor %} 
+{% endblock %}

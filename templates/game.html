@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block title %}Madlib{% endblock %}
+
+{% block content %}
+    Hello {{ person }}, Welcome to the MadLib!
+    <form action="/madlib" method="POST">   
+        Choose your person:
+        <select name="name">
+          <option value="Balloonicorn">Balloonicorn</option>
+          <option value="Mr. Fluffy">Mr. Fluffy</option>
+          <option value="Dr. Python">Dr. Python</option>
+        </select>
+        <div>
+            <label>Choose your color(s): </label>
+            <input type="checkbox" name="colors" value="red">
+            <label>Red</label>
+          
+            <input type="checkbox" name="colors" value="blue">
+            <label>Blue</label>
+          
+            <input type="checkbox" name="colors" value="yellow">
+            <label>Yellow</label>
+
+            <input type="checkbox" name="colors" value="pink">
+            <label>Pink</label>
+
+            <input type="checkbox" name="colors" value="orange">
+            <label>Orange</label>
+            
+            <input type="checkbox" name="colors" value="green">
+            <label>Green</label>
+            
+            <input type="checkbox" name="colors" value="purple">
+            <label>Purple</label>
+      </div>
+        <div>
+            <label>Enter a noun: </label>
+            <input type="text" name="noun">
+        </div>
+        <div>
+            <label>Enter an adjective: </label>
+            <input type="text" name="adjective">
+        </div>
+        <div>
+            <label>Choose your type of story: </label>
+          
+            <input type="checkbox" name="story" value="adventure">
+            <label>Adventure</label>
+          
+            <input type="checkbox" name="story" value="romantic">
+            <label>Romantic</label>
+          
+            <input type="checkbox" name="story" value="mystery">
+            <label>Mystery</label>
+      </div>
+      <input type="submit" name="Submit"> 
+    </form>
+
+{% endblock %}
